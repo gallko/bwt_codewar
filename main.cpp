@@ -29,9 +29,8 @@ std::string decode(const std::string& s, int n) {
         el.second = it++;
     });
 
-//    TODO: an error is hidden here
-    std::sort(v.begin(), v.end(),[](const my_pair &el1, const my_pair &el2){
-        return el1.first <= el2.first;
+    std::stable_sort(v.begin(), v.end(),[](const my_pair &el1, const my_pair &el2) {
+        return (el1.first < el2.first);
     });
 
     std::string r(s);
